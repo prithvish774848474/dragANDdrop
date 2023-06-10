@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta Data is present here. -->
+        <meta charset="utf-8">
+        <meta name="author" content="Prithvish Sarkar">
+        <meta name="keywords" content="drag, drop, HTML, CSS, JavaScript">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="DragDrop.css">
+    </head>
+    <body>
+        
+        <!-- This is the heading of the Webpage. -->
+        <h1> Drag and Drop the pictures from one section to another! </h1>
+        
+        <!-- An unordered list is created so as to provide a step-by-step user guide for the Webpage. -->
+        <ul>
+            <p>How to use DRAG and DROP: </p>
+            <li>Hold on to any of the image by clicking on your left mouse button.</li>
+            <li>Drag the picture while keeping the mouse button pressed.</li>
+            <li>Place the picture over the target frame. The target frame is just right to the picture.</li>
+            <li>Release the mouse button to drop the picture.</li>
+        </ul>
+
+        <!-- A common query to reset the Webpage to its original form is addressed. The use of 'Reset' button is discussed. -->
+        <p> What shall I do to place the pictures in their original frame? </p>
+        <p>Click on the <code>Reset</code> button provided below</p>
+
+        <!-- A Grid is created which consists of three flower pictures that is to be dragged and dropped to the other side of the Grid. -->
+        <div id="container">
+
+            <!-- The following two 'div' elements has the picture of the first flower and its corresponding drop target. -->
+            <div id="firstFlower">
+                <!-- This is the image of first flower. -->
+                <img id="flower1" src="/flower1.jpg" alt="first flower" draggable="true" ondragstart="dragStart(event)" ondrag="dragImage(event)">
+            </div>
+            <!-- The 'div' below is the drop target of the first flower picture. -->
+            <div id="dropContainer1" ondragover="dragOver(event)" ondrop="dropDown(event)"></div>
+
+            <!-- The following two 'div' elements has the picture of the second flower and its corresponding drop target. -->
+            <div id="secondFlower">
+                <!-- This is the image of second flower. -->
+                <img id="flower2" src="/flower2.jpg" alt="second flower" draggable="true" ondragstart="dragStart(event)" ondrag="dragImage(event)">
+            </div>
+            <!-- The 'div' below is the drop target of the second flower picture. -->
+            <div id="dropContainer2" ondragover="dragOver(event)" ondrop="dropDown(event)"></div>
+
+            <!-- The following two 'div' elements has the picture of the third flower and its corresponding drop target. -->
+            <div id="thirdFlower">
+                <!-- This is the image of third flower .-->
+                <img id="flower3" src="/flower3.jpg" alt="third flower" draggable="true" ondragstart="dragStart(event)" ondrag="dragImage(event)">
+            </div>
+            <!-- The 'div' below is the drop target of the third flower picture. -->
+            <div id="dropContainer3" ondragover="dragOver(event)" ondrop="dropDown(event)"></div>
+
+        </div>
+        <!-- The below 'div' element contains a message that is to be showed after the picture is dropped successfully. -->
+        <div id="message">Congrats! <br> Picture Dropped Successfully</div>
+        <!-- This is the 'Reset' button which puts back the dragged pictures to its original place. -->
+        <button type="button" onclick="refreshPage()"> Click to Reset </button>
+        <!-- Link to external JavaScript file is attached in 'script' tag. -->
+        <script src="DragDrop.js"></script>
+    </body>
+</html>

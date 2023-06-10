@@ -1,0 +1,115 @@
+body {background-color: rgba(240, 240, 240, 0.8); margin: 0; padding: 0.5em 2em; }
+
+/* 'container' is the 'id' of the 'div' element which will be displayed as a Grid. */
+#container {
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.25em;
+    margin-top: 1em;
+    padding: 0.125em;
+    border: 0.125em dashed deepskyblue;
+    border-radius: 0.5em;
+    box-shadow: 0.25em -0.25em 0.25em lightskyblue;
+    box-sizing: border-box;
+    background-image: url("/flower4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* The CSS for the pictures inside the Grid Container. */
+#container img {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#container img:hover {cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;}
+
+/* CSS for the heading of the Webpage. */
+h1{
+    border-left: 0.75em solid darkblue;
+    border-radius: 0 0.5em 0.5em 0;
+    box-shadow: 0.125em 0.125em 0.25em steelblue;
+    padding: 1em;
+    margin: 1.25em;
+    text-align: center;
+    background-color: rgba(173, 216, 230, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: navy;
+}
+
+ul {list-style-type: none;} /* This CSS removes the maker from the Unordered List. */
+
+/* Changing the appearance of the paragraphs present inside Unordered List and its sibling prargraph. */
+ul > p, ul + p {
+    font-weight: bolder;
+    color: darkgreen;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0.5em 0 0.5em 2em;
+    border-left: 0.5em double darkgreen;
+    border-bottom: 0.5em double darkgreen;
+}
+
+/* Changing the appearance of the List Items and the common question related to 'Reset button' paragraph. */
+li, p:nth-child(4) {
+    border-left: 2em groove mediumslateblue;
+    border-right: 2em groove mediumslateblue;
+    box-shadow: 0.125em 0.125em 0.25em steelblue;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    background-color: rgba(173, 216, 230, 0.2);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+/* Styling the 'Reset' button clicking which the dragged pictures comes back to its original state. */
+button {
+    position: relative; left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1em;
+    padding: 0.5em 4em;
+    border-radius: 2em;
+    border: 0.125em outset #ccc;
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    color: navy;
+}
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.25em forestgreen;
+    border-color: forestgreen;
+    border-style: inset;
+}
+
+/* Styling of the message 'div' element which is to be displayed when the user successfully drags and drops the picture at the target location. */
+#message {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    box-shadow: 0 0 0.5em darkgreen;
+    font-size: 3em;
+    text-align: center;
+    padding: 0.25em;
+    background-color: rgba(240, 240, 240, 0.8);
+    color: darkgreen;
+    display: none;
+}
+
+/* Media Query is being used for Responsive Web Design. */
+@media screen and (max-width: 450px) {
+    button {
+        padding: 0.5em;
+        font-size: 1em;
+    }
+    h1 {
+        padding: 0.5em; margin: 0.5em;
+    }
+}
